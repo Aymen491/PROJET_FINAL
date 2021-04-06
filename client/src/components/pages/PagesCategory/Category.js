@@ -16,6 +16,7 @@ const dispatch = useDispatch();
 <div>
     <div style={{position:"relative",textAlign:"center",color:"white"}}>
         <img src={myCategory.imgUrl} alt='cat' width='100%' height='300'/>
+        <h5 style={{position:"relative",textAlign:"center",color:"black"}}>{myCategory.description}</h5>
     <h1 style={{position:"absolute",top:'50%',right:'50%'}}>{myCategory&& myCategory.name}</h1>
     </div>
 
