@@ -63,15 +63,14 @@ router.get('/', isAuth, async (req, res) => {
 
 })
 
-router.delete('/', isAuth, async (req, res) => {
-    const user = req.user.id
+router.delete('/delete/:id', isAuth, async (req, res) => {
+    const { id } = req.params;
     try {
-        const panier = await Panier.findOne({ user: user }).populate({ path: 'listProducts.product', select: ['name','imgUrl','price'] });
-        res.send({ msg: "this is your Cart", panier });
+        const panier = await Panier.findByIdAndDelete(id);
+        res.json({ msg: "panier deleted", panier });
     } catch (error) {
         res.json({ msg: "error" });
     }
-
 })
 
 module.exports = router;
