@@ -14,11 +14,16 @@ const dispatch = useDispatch();
     const myCategory = category && category.find(el=>el._id === match.params.id)
   return (
 <div>
-    <div style={{position:"relative",textAlign:"center",color:"white"}}>
+    <div style={{position:"relative",textAlign:"center",color:"black" , margin : "20px" , borderReduce : "30px"}}>
+   
         <img src={myCategory.imgUrl} alt='cat' width='100%' height='300'/>
-        <h5 style={{position:"relative",textAlign:"center",color:"black"}}>{myCategory.description}</h5>
+        <br/>
+        <br/>
+        <h5 style={{position:"relative",textAlign:"center",color:"red"}}>{myCategory.description}</h5>
     <h1 style={{position:"absolute",top:'50%',right:'50%'}}>{myCategory&& myCategory.name}</h1>
+    
     </div>
+   
 
  <div className='container' style={{display:"flex",flexWrap:"wrap", flexDirection:"row"}}>
      {
